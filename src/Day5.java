@@ -15,6 +15,7 @@ public class Day5 {
 
 		while(i < op.length && op[i] != 99) {
 			//System.out.println("Index: "+i);
+			//System.out.println("OP: "+op[i]);
 
 			if(String.valueOf(op[i]).length() == 4) {
 				String rep = String.valueOf(op[i]);
@@ -32,6 +33,24 @@ public class Day5 {
 					//System.out.println(rep);
 					pram1 = Integer.parseInt(""+rep.charAt(1));
 					pram2 = Integer.parseInt(""+rep.charAt(0));
+				}
+			}
+			else if(String.valueOf(op[i]).length() == 3) {
+				String rep = String.valueOf(op[i]);
+				opCode = Integer.parseInt(""+rep.charAt(1)+ rep.charAt(2));
+			
+				if(opCode > 4) {
+					
+					opCode = op[i];
+					pram1 = 0;
+					pram2 = 0;
+				}
+				else {
+					//System.out.println("TEMP: "+opCode);
+					//rep = "0"+rep;
+					//System.out.println(rep);
+					pram1 = Integer.parseInt(""+rep.charAt(0));
+					pram2 = 0;
 				}
 			}
 			else {
